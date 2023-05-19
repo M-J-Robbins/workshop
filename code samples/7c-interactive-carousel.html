@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+  <meta name="x-apple-disable-message-reformatting">
+  <!-- <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark"> -->
+  <title>Email title</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    /* :root {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    } */
+  </style>
+</head>
+<body class="body">
+
+<!-- CSS comments break Yahoo and AOL.  
+Comments here are just for demonstration purposes 
+-->
+<style>
+  /* show the carousel where it works */
+  input:checked+.carousel {
+    display: block !important;
+  }
+  input:checked~.carouselFallback {
+    display: none;
+  }
+  .carouselID {
+    text-align: center;
+    /* CB-align */
+  }  
+  .carouselID .carousel-box{
+    padding: 4px;
+    /* CB-paddding */
+    border: 2px solid red;
+    /* CB-border */
+  }
+  .carouselID .carousel-wrap {
+    max-width: 600px;
+    /* CB-width */
+  }
+  .carousel-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+  }
+  .ie-radio-check {
+    display: inline-block;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    margin: 0 0 0 -9999px;
+    float: left;
+    position: absolute;
+    -webkit-appearance: none;
+  }
+  .carousel input:focus~.thumb {
+    outline: Highlight auto 2px;
+    outline: -webkit-focus-ring-color auto 5px;
+    outline-offset: 3px;
+  }
+  .slide {
+    width: 100%;
+    background-size: cover;
+    display: block;
+  }
+  .carouselID .slide {
+    padding-bottom: 50%; /* CB-height / CB-width * 100 */
+  }
+  .thumb {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: .3em .1em;
+    display: inline-block;
+    border: .1em solid;
+  }
+  input:checked~.thumb {
+    background: currentColor !important;
+  }
+  .pos-arrow {
+    max-height: 0;
+    text-align: left;
+  }
+  .arrow {
+    display: inline-block;
+    max-height: 0;
+    max-width: 0;
+    border: 1em solid transparent;
+    border-right-color: currentColor;
+    border-left-width: 0;
+    opacity: 0.99;  /* z- index for outlook */
+    position: relative; /* z- index for yahoo AOL */
+    vertical-align: middle;
+    margin: 0 5% 0 .2em; /* increase click area */
+  }
+  .arrow-padding {
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 50%; /* CB-height / CB-width * 100 */
+    width: 0px;
+  }
+  .apple-clickarea {
+    height: 200px;
+    width: 2.5em;
+    width:clamp(40px, 2.5em, 70px);
+    float: left;
+    transform: translate(-5px, -50%);
+  }
+  /* Left Arrow */
+   /* .netease_mail_readhtml .start fixes spesificity in 163.com */
+  .carouselID input:checked~* .pos-arrow,
+  .start,
+  .netease_mail_readhtml .start {
+    text-align: right;
+  }
+  .carouselID input:checked~* .pos-arrow .apple-clickarea,
+  .start .apple-clickarea {
+    float: right;
+    transform: translate(5px, -50%);
+  }
+  .carouselID input:checked~* .arrow,
+  .start .arrow {
+    border-right-width: 0;
+    border-left: 1em solid;
+    margin: 0 .2em 0 5%;  /* increase click area */
+  }
+  /* Right arrow */
+  .carouselID input:checked~.start~* .end {
+    display: block;
+    text-align: left;
+  }
+  .carouselID input:checked~.start~* .end .arrow {
+    border-left-width: 0;
+    border-right: 1em solid;
+    margin: 0 5% 0 .2em;  /* increase click area */
+  }
+  .carouselID input:checked+.pos-arrow,
+  .carouselID input:checked~label label .pos-arrow {
+    display: none;
+  }
+  .carouselID input:checked~.start~* .end .arrow .apple-clickarea {
+    float: left;
+    transform: translate(-5px, -50%);
+  }
+  .img-wrap {
+    display: none;
+  }
+
+  /* this makes the default image show on load */
+  .carousel .mid .img1{
+    display:block;
+    position:initial;
+  }
+  .carouselID input:checked ~ label .mid .img1{
+    display:none;
+  }
+
+  /* each CB-img */
+  .carouselID input:checked+.img1~* .mid .img1,
+  .carouselID input:checked+.img2~* .mid .img2,
+  .carouselID input:checked+.img3~* .mid .img3,
+  .carouselID input:checked+.img4~* .mid .img4 {
+    display: block;
+  }
+  input:checked+.carouselID .img4 span {
+    background-image: url(https://placekitten.com/409/287);
+    /* CB-image4 */
+  }
+  input:checked+.carouselID .img3 span {
+    background-image: url(https://placekitten.com/408/287);
+    /* CB-image3 */
+  }
+  input:checked+.carouselID .img2 span {
+    background-image: url(https://placekitten.com/407/287);
+    /* CB-image2 */
+  }
+  input:checked+.carouselID .img1 span{
+    background-image: url(https://placekitten.com/406/287);
+    /* CB-image1 */
+  }
+  /* logical tab direction  */
+  .carousel {
+    direction: rtl;
+  }
+  .carousel label {
+    direction: ltr;
+  }
+  /* removes inline-block spacing */
+  .arrow-wrap {
+    display: table;
+    width: 100%;
+    overflow: hidden;
+  }
+  .arrow-wrap:hover .arrow{
+    transform:scale(1.1);
+  }
+  /* CB-autoplay true */
+  @supports (animation: carousel-anim) and (position: absolute) {
+    /* supports position absolute fixes older Samsung, also helps prevent other potential issues */
+    .carouselID .img-wrap {
+      animation: carouselID-anim 30s infinite;
+      /* animation-time = CB-image-count * frame-length[7.5s] */
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    .mid{
+      position:relative;
+    }
+    .carouselID .img1,
+    .carouselID .thumb.img1{
+      animation-delay: -30s;
+    }
+    /* animation-time '-' (@index * frame-length[7.5])}}s; 
+  30s - (0 * 7.5)
+  */
+    .carouselID .img2,
+    .carouselID .thumb.img2{
+      animation-delay: -22.5s;
+    }
+    /*  30s - (1 * 7.5) */
+    .carouselID .img3,
+    .carouselID .thumb.img3{
+      animation-delay: -15s;
+    }
+    /*  30s - (2 * 7.5) */
+    .carouselID .img4,
+    .carouselID .thumb.img4{
+      animation-delay: -7.5s;
+    }
+    /*  30s - (3 * 7.5) */
+    .arrow {
+      z-index: 2;
+    }
+    .carouselID input:checked~* .img-wrap {
+      position: initial;
+      display: none;
+      animation: none;
+    }
+    @keyframes carouselID-anim {
+      0%,
+      100% {
+        z-index: 1;
+        opacity: 1;
+      }
+      24% {
+        opacity: 1;
+      }
+      /* (100 - CB-image-count) / CB-image-count */
+      25% {
+        z-index: 1;
+      }
+      /* 100 / CB-image-count */
+      26%,
+      /* (100 + CB-image-count) / CB-image-count */
+      99% {
+        z-index: 0;
+        opacity: 0;
+      }
+    }
+    .carouselID:has(input) .thumb {
+      animation-name: carouselID-thumb;
+      animation-duration: 30s;
+      animation-iteration-count: infinite;
+      background:currentColor;
+    }
+    .carouselID:has(input:checked) .thumb {
+      animation:none;
+      background:none;
+    }
+    @keyframes carouselID-thumb {
+      0%,
+      100% {
+        background:currentColor;
+      }
+      24% {
+        background:currentColor;
+      }
+      /* (100 - CB-image-count) / CB-image-count */
+      25%,
+      99% {
+        background:none;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    /* Stop animation if prefers-reduced-motion */
+      .carouselID .img-wrap {
+        position: initial;
+        display: none;
+        animation: none;
+      }
+      .carouselID .thumb {
+        animation:none;
+        background:none;
+      }
+  }
+ /* .thumb, .thumb span{
+  height:60px;
+  width:60px;
+  border-radius:2px;
+  display:inline-block;
+  background-size:cover;
+  background-position: center;
+}   */
+
+    .carousel:has(label + .pos-arrow){
+      display:none !important;
+      background:pink;
+    }
+
+    .carousel:has(label + .pos-arrow) + .carouselFallback {
+      display:block !important;
+      background:pink;
+    }
+  .zoho ~ .zoho{
+    display:block;
+  }
+
+</style>
+<!-- Yahoo / AOL focus fix -->
+<style>
+  .& .carousel input:focus~.thumb{
+    outline: Highlight auto 5px;
+  } 
+</style>
+<!--[if mso]><!-->
+<input type="radio" id="interactive" style="display:none;display:contents;mso-hide:all;" style="display:none;" checked>
+<div class="carousel carouselID" style="display:none">
+  <div role="group" aria-label="image carousel" class="carousel-wrap">
+    <div class="carousel-box">
+      <!-- I've added an aria-label, this should be set CB-carousel-title -->
+      <label role="presentation">
+        <input type="radio" name="carousel-ID" class="ie-radio-check" aria-label="CB-alt1" aria-roledescription="image">
+        <div class="pos-arrow img1">
+          <div class="arrow-wrap">
+            <div class="arrow-padding"></div>
+            <div class="arrow">
+              <div class="apple-clickarea"></div>
+            </div>
+          </div>
+        </div>
+        <div class="pos-arrow start">
+          <div class="arrow-wrap">
+            <div class="arrow-padding"></div>
+            <div class="arrow">
+              <div class="apple-clickarea"></div>
+            </div>
+          </div>
+        </div>
+        <label role="presentation">
+          <input type="radio" name="carousel-ID" class="ie-radio-check" aria-label="CB-alt2" aria-roledescription="image">
+          <div class="pos-arrow img2">
+            <div class="arrow-wrap">
+              <div class="arrow-padding"></div>
+              <div class="arrow">
+                <div class="apple-clickarea"></div>
+              </div>
+            </div>
+          </div>
+          <label role="presentation">
+            <input type="radio" name="carousel-ID" class="ie-radio-check" aria-label="CB-alt3" aria-roledescription="image">
+            <div class="pos-arrow img3">
+              <div class="arrow-wrap">
+                <div class="arrow-padding"></div>
+                <div class="arrow">
+                  <div class="apple-clickarea"></div>
+                </div>
+              </div>
+            </div>
+            <label role="presentation">
+              <input type="radio" name="carousel-ID" class="ie-radio-check" aria-label="CB-alt4" aria-roledescription="image">
+              <div class="pos-arrow end img4">
+                <div class="arrow-wrap">
+                  <div class="arrow-padding"></div>
+                  <div class="arrow">
+                    <div class="apple-clickarea"></div>
+                  </div>
+                </div>
+              </div>
+              <label role="presentation">
+                <div class="mid">
+                  <!-- Reverse order here gives better fallback to freenet where @keyframes breaks -->
+                  <!-- if there is no link use a <span> in place of the <a> -->
+                  <!-- We've used title attributes instead of aria-label, this is because Yahoo/AOL don't support aria-label, however when Yahoo/AOL fix this we should update the code -->
+                  <a href="https://example.com?img4" class="img-wrap img4"><span class="slide" role="img" title="CB-alt-text4"></span></a>
+                  <a href="https://example.com?img3" class="img-wrap img3"><span class="slide" role="img" title="CB-alt-text3"></span></a>
+                  <a href="https://example.com?img2" class="img-wrap img2"><span class="slide" role="img" title="CB-alt-text2"></span></a>
+                  <a href="https://example.com?img1" class="img-wrap img1"><span class="slide" role="img" title="CB-alt-text1"></span></a>
+                </div>
+              </label>
+              <div class="thumb img4"><span></span></div>
+            </label>
+            <div class="thumb img3"><span></span></div>
+          </label>
+          <div class="thumb img2"><span></span></div>
+        </label>
+        <div class="thumb img1"><span></span></div>
+      </label>
+    </div>
+  </div>
+</div>
+<!--<![endif]-->
+<div class="carouselFallback" style="text-align: center; /* CB-align */
+    padding:2px; /* CB-paddding */
+    border:2px solid red; /* CB-border */">
+  <a href="https://example.com?fallback">
+  <img src="https://fakeimg.pl/600x300/333/eee?text=fallback&font=lobster" alt="fallback image" width="600" style="max-width:100%; vertical-align:middle"></a>
+</div>
+
+<!-- 
+  <script data-description="show fallback">
+  document.getElementById('interactive').checked = false;
+</script>  -->
+
+
+</body>
+</html>

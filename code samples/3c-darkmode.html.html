@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>This is my semantic first email</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    :root {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+		@media (prefers-color-scheme:dark){
+			.wrapper{
+				background:#000 !important;
+			}
+			.content{
+				background: #333 !important;
+				color:#eee !important;
+			}
+			.content a{
+				color:#08f !important;
+			}
+		}
+  </style>
+</head>
+<body class="body" xml:lang="en">
+  <div role="article" aria-roledescription="email" aria-label="This is my semantic first email" lang="en" dir="ltr" style="font-size:medium; font-size:max(16px, 1rem);background:#aaa" class="wrapper">
+    <!--[if true]>
+    <table role="presentation" style="width:37.5em;mso-cellpadding:1em" align="center"><tr><td>
+    <![endif]-->
+    <div style="max-width:37.5em; margin:0 auto; background:#eee;overflow:auto;padding:1em" class="content">
+      <h1 style="margin:1em 0">Semantic code in email</h1>
+			<picture>
+				<source srcset="https://parcel-prod-1.nyc3.digitaloceanspaces.com/e2115bdb-4726-4a84-9922-9d48b64966a7/3e833729-579f-4cd5-b399-85b16e8fe239.jpeg" media="(prefers-color-scheme: dark)">
+				<img src="/images/sun.jpeg" alt="Generic sky, could be day, could be night" style="width:100%">
+			</picture>
+			<p>What happens when you use simple semantic code in an HTML email without anything else added to it?  Let's look at a few elements</p>
+			<h2>Elements to test</h2>
+			<ol>
+				<li>H1 - A heading level 1</li>
+				<li>H2 - A heading level 2</li>
+				<li>P - A paragraph</li>
+				<li>Lists
+					<ul>
+						<li>OL - An ordered list</li>
+						<li>UL - An unordered list</li>
+					</ul>
+				</li>
+				<li>LI - A list item</li>
+				<li>A - An anchor link</li>
+			</ol>
+			<a href="https://parcel.io/e/7147b0f3-b43c-49f0-9613-f5dcd3617492?">View this code in Parcel.io</a>
+    </div>
+    <!--[if true]>
+    </td></tr></table>
+    <![endif]-->
+  </div>
+</body>
+</html>

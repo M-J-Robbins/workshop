@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head style="display:block; white-space:pre-wrap">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>Email title</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+<style style="">
+  html::before{
+    content: 'html class=' attr(class) ' id=' attr(id) ' style=' attr(style);
+  }
+  body::before{
+    content: 'body class=' attr(class) ' id=' attr(id) ' style=' attr(style);
+  }
+  body > * ::before{
+    content: 'first-child class=' attr(class) ' id=' attr(id) ' style=' attr(style);
+  }
+  div::before{
+    content: 'div class=' attr(class) ' id=' attr(id) ' style=' attr(style);
+  }
+  input::before{
+    content: 'input class=' attr(class) ' id=' attr(id) ' style=' attr(style);
+    width:200px
+  }
+  img::before{
+    content: 'img class=' attr(class) ' id=' attr(id) ' style=' attr(style) ' src=' attr(src) ' alt=' attr(alt);
+  }
+  meta{display:block}
+  meta::before{
+    content: 'meta name=' attr(name) ' content=' attr(content);
+  }
+  *::before{
+    padding: 0.5em;
+    line-height: 1.5;
+    display: inline-block;
+    outline: 1px dashed red;
+    background: rgba(255,0,0,0.1);
+}
+  }
+  body, html, div{
+    border:1px solid green; padding:1em;
+  }
+</style>
+
+</head>
+<body>
+  <input type="checkbox">
+  <div>
+     email content in here 
+     <div class="foo">test test test</div>
+     <img src="" alt="no image">
+  </div>
+</body>
+</html>

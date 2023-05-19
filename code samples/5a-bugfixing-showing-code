@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head style="display:block">
+<style style="display:block;white-space: pre-wrap;" contenteditable="">
+	/* Style in head */
+	.test{
+		background:red;
+	}
+</style>
+</head>
+<body>
+<div class="test">test</div>
+<style style="display:block; white-space: pre-wrap;" contenteditable>
+	/* Style in body */
+	.test{
+		background:green;
+	}
+</style>
+</body>
+</html>

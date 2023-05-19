@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>Interactive accordion</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    input:checked~* .accordion {
+      display: block !important;
+    }
+
+    input:checked~* .accordionFallback {
+      display: none;
+    }
+
+    .radio-check {
+      display: inline-block;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      margin: 0;
+      margin: 0 0 0 -9999px;
+      float: left;
+      position: absolute;
+      -webkit-appearance: none;
+    }
+    .accordion-box{
+      display:none;
+    }
+    input:checked ~ .accordion-box{
+      display:block;
+    }
+    .arrow{
+      display:inline-block;
+      width:0;
+      border: .5em solid transparent;
+      border-right-width: 0;
+      border-left-color: currentColor;
+      vertical-align: middle;
+      transform-origin:center;
+    }
+    input:checked ~ .accordion-control .arrow{
+      rotate: 90deg;
+    }
+  </style>
+</head>
+<body>
+<div lang="en" dir="ltr">
+  <input type="radio" id="interactive" style="display:none;display:contents;mso-hide:all;" style="display:none;" checked>
+  <div>
+    <h1>CSS accordion</h1>
+    <h2>Indervidual controled accordion</h2>
+    <div class="accordion" style="display:none">
+      <label>
+        <input type="checkbox" class="radio-check">
+        <h3 class="accordion-control">Is interactive email cool 
+          <div class="arrow"></div>
+        </h3>
+        <label class="accordion-box">
+          <div>Yes it is</div>
+        </label>
+      </label>
+            <label>
+        <input type="checkbox" class="radio-check">
+        <h3 class="accordion-control">Are you shure
+          <div class="arrow"></div>
+        </h3>
+        <label class="accordion-box">
+          <div>Yes, yes I am sure</div>
+        </label>
+      </label>
+    </div>
+    <div class="accordionFallback">
+      fallback content
+    </div>
+    <h2>Grouped controled accordion</h2>
+        <div class="accordion" style="display:none">
+      <label>
+        <input type="radio"  name="accordion-group"  class="radio-check">
+        <h3 class="accordion-control">Is interactive email cool 
+          <div class="arrow"></div>
+        </h3>
+        <label class="accordion-box">
+          <div>Yes it is</div>
+        </label>
+      </label>
+        <label>
+        <input type="radio" name="accordion-group" class="radio-check">
+        <h3 class="accordion-control">Are you shure
+          <div class="arrow"></div>
+        </h3>
+        <label class="accordion-box">
+          <div>Yes, yes I am sure</div>
+        </label>
+      </label>
+    </div>
+    <div class="accordionFallback">
+      fallback content
+    </div>
+  </div>
+  </div>
+</body>
+</html>
